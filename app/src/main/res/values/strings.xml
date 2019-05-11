@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Are We There Yet?</string>
+    <string name="message_label">Message</string>
+    <string name="message_example">Are we there yet?</string>
+    <string name="phone_label">Phone Number</string>
+    <string name="phone_example">(555) 555-5555</string>
+    <string name="freq_label">Frequency (minutes)</string>
+    <string name="freq_example">5</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+</resources>
