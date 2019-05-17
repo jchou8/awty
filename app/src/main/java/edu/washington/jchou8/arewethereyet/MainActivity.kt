@@ -1,12 +1,16 @@
 package edu.washington.jchou8.arewethereyet
 
+import android.Manifest
 import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
+import android.support.v4.app.ActivityCompat
+import android.support.v4.content.ContextCompat
 import android.util.Log
 import android.view.View
 import android.widget.Toast
@@ -21,6 +25,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val alarmManager = applicationContext.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+
+        if (ContextCompat.checkSelfPermission(applicationContext, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                arrayOf(Manifest.permission.SEND_SMS),
+                1)
+        }
 
         btn_toggle.setOnClickListener{
             if (started) {
