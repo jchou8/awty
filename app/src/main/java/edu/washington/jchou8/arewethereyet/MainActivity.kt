@@ -31,6 +31,11 @@ class MainActivity : AppCompatActivity() {
                 arrayOf(Manifest.permission.SEND_SMS),
                 1)
         }
+        if (ContextCompat.checkSelfPermission(applicationContext, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                arrayOf(Manifest.permission.READ_PHONE_STATE),
+                2)
+        }
 
         btn_toggle.setOnClickListener{
             if (started) {
